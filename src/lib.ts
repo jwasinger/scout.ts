@@ -112,6 +112,14 @@ export const getImports = (env: EnvData) => {
           console.log('f2m_mul input points:')
         } else if (value == 222) {
           console.log('f2m_mul output result:');
+        } else if (value == 331) {
+          console.log('f2m_add input points:')
+        } else if (value == 332){
+          console.log('f2m_add output result:')
+        } else if (value == 441) {
+          console.log("f2m_sub input points:")
+        } else if (value == 442) {
+          console.log('f2m_sub output result:')
         } else if (value == 661) {
           console.log('f6m_mul input points:')
         } else if (value == 662) {
@@ -140,12 +148,13 @@ export const getImports = (env: EnvData) => {
       },
       // modular multiplication of two numbers in montgomery form (i.e. montgomery multiplication)
       bignum_f1m_mul: (aOffset: number, bOffset: number, rOffset: number) => {
-        console.log('bignum_f1m_mul.')
         const a = new BN(memget(mem, aOffset, BIGNUM_WIDTH_BYTES), 'le')
         const b = new BN(memget(mem, bOffset, BIGNUM_WIDTH_BYTES), 'le')
 
         var result = mulmodmont(a, b);
+
         var result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES);
+        console.log("bignum_f1m_mul: " + a.toString('hex') + " * " + b.toString('hex') + ' = ' + result.toString('hex'))
 
         memset(mem, rOffset, result_le)
       },
@@ -156,6 +165,7 @@ export const getImports = (env: EnvData) => {
         var result = addmod(a, b);
 
         var result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
+        console.log(a.toString('hex') + " + " + b.toString('hex') + ' = ' + result_le.toString('hex'))
 
         memset(mem, outOffset, result_le)
       },
@@ -165,6 +175,7 @@ export const getImports = (env: EnvData) => {
         var result = submod(a, b);
 
         var result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
+        console.log(a.toString('hex') + " - " + b.toString('hex') + ' = ' + result_le.toString('hex'))
         memset(mem, outOffset, result_le)
       },
       bignum_int_add: (aOffset: number, bOffset: number, outOffset: number) => {
