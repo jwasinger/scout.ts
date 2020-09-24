@@ -54,6 +54,15 @@ var field_modulus = bls12_field_modulus;
 var r_inv = bls12_r_inv;
 var r_squared = bls12_r_squared;
 
+let op_counts = {
+  addmod: 0,
+  submod: 0,
+  mulmodmont: 0,
+  intadd: 0,
+  intsub: 0,
+  intmul: 0,
+  intdiv: 0
+}
 
 function addmod(a: BN, b: BN): BN {
   var res = a.add(b);
@@ -104,6 +113,8 @@ export const getImports = (env: EnvData) => {
       },
       eth2_savePostStateRoot: (ptr: number) => {
         res = memget(mem, ptr, 32)
+	console.log("opcounts");
+	console.log(op_counts);
         //console.log('eth2_savePostStateRoot:', memget(mem, ptr, 144).toString('hex'))
       },
       abort: () => { throw ('Wasm aborted') },
@@ -120,6 +131,8 @@ export const getImports = (env: EnvData) => {
         var result = mulmodmont(a, b);
         var result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES);
 
+	op_counts.mulmodmont++
+
         memset(mem, rOffset, result_le)
       },
       bignum_f1m_add: (aOffset: number, bOffset: number, outOffset: number) => {
@@ -129,12 +142,16 @@ export const getImports = (env: EnvData) => {
 
         var result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
 
+	op_counts.addmod++
+
         memset(mem, outOffset, result_le)
       },
       bignum_f1m_sub: (aOffset: number, bOffset: number, outOffset: number) => {
         const a = new BN(memget(mem, aOffset, BIGNUM_WIDTH_BYTES), 'le');
         const b = new BN(memget(mem, bOffset, BIGNUM_WIDTH_BYTES), 'le');
         var result = submod(a, b);
+
+	op_counts.submod++
 
         var result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
         memset(mem, outOffset, result_le)
@@ -156,6 +173,8 @@ export const getImports = (env: EnvData) => {
         const result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
         memset(mem, outOffset, result_le)
 
+	op_counts.intadd++
+
         return carry
       },
       bignum_int_sub: (aOffset: number, bOffset: number, outOffset: number) => {
@@ -173,6 +192,8 @@ export const getImports = (env: EnvData) => {
 
         const result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
         memset(mem, outOffset, result_le)
+
+	op_counts.intsub++;
         
         return carry
       },
@@ -180,6 +201,8 @@ export const getImports = (env: EnvData) => {
         const a = new BN(memget(mem, aOffset, BIGNUM_WIDTH_BYTES), 'le');
         const b = new BN(memget(mem, bOffset, BIGNUM_WIDTH_BYTES), 'le');
         const result = a.mul(b).mod(TWO_POW384);
+
+	op_counts.intmul++
 
         const result_le = result.toArrayLike(Buffer, 'le', BIGNUM_WIDTH_BYTES)
         memset(mem, outOffset, result_le)
