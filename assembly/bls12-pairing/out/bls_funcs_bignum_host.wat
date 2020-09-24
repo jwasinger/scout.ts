@@ -5460,7 +5460,7 @@
             (i32.const 760)
             (local.get $p2))))))
   (func $f1m_neg  (param $p0 i32) (param $p1 i32)
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 952)
       (local.get $p0)
       (local.get $p1)))
@@ -7796,7 +7796,7 @@
       (i64.shr_u
         (local.get $l3)
         (i64.const 32)))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 1288)
       (i32.add
         (local.get $p0)
@@ -16371,12 +16371,12 @@
                 (i32.const 760)
                 (local.get $p1))))))))
   (func $f1m_squareOld  (param $p0 i32) (param $p1 i32)
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (local.get $p0)
       (local.get $p1)))
   (func $f1m_toMontgomery  (param $p0 i32) (param $p1 i32)
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 856)
       (local.get $p1)))
@@ -16452,15 +16452,15 @@
             (call $f1m_one
               (i32.const 2632)))
           (else
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (i32.const 2632)
               (i32.const 856)
               (i32.const 2632))))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (local.get $l3)
           (i32.const 2632)
           (i32.const 2680))
-        (call $f1m_add
+        (call $main/bignum_f1m_add
           (local.get $p2)
           (i32.const 2680)
           (local.get $p2))
@@ -16513,15 +16513,15 @@
         (call $f1m_one
           (i32.const 2632)))
       (else
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.const 2632)
           (i32.const 856)
           (i32.const 2632))))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 2680)
       (i32.const 2632)
       (i32.const 2680))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p2)
       (i32.const 2680)
       (local.get $p2)))
@@ -16533,7 +16533,7 @@
     (call $f1m_toMontgomery
       (i32.const 2728)
       (i32.const 2728))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 2728)
       (local.get $p3)))
@@ -16577,7 +16577,7 @@
                 (i32.const 48))
               (local.get $l5)))
           (else
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $l6)
               (i32.sub
                 (local.get $l5)
@@ -16637,13 +16637,13 @@
                 (local.get $l5)
                 (i32.const 48))
               (i32.const 2776))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $l5)
               (local.get $l6)
               (i32.sub
                 (local.get $l5)
                 (i32.const 48)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $l5)
               (i32.const 2776)
               (local.get $l7))))
@@ -16766,7 +16766,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 128)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16782,7 +16782,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 64)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16798,7 +16798,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 32)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16814,7 +16814,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 16)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16830,7 +16830,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 8)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16846,7 +16846,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 4)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16862,7 +16862,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 2)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16878,7 +16878,7 @@
               (i32.sub
                 (local.get $l5)
                 (i32.const 1)))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $p3)
               (i32.const 2824)
               (local.get $p3))))
@@ -16962,11 +16962,11 @@
         (call $f1m_square
           (i32.const 3064)
           (i32.const 2872))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.const 2920)
           (i32.const 2872)
           (i32.const 2920))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.const 2968)
           (i32.const 3064)
           (i32.const 2968))
@@ -26166,15 +26166,15 @@
     (call $f1m_square
       (local.get $l2)
       (i32.const 5064))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p1)
       (i32.const 5064)
       (i32.const 5112))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $l2)
       (i32.const 5064)
       (i32.const 5160))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26241,29 +26241,29 @@
     (call $f1m_square
       (local.get $l3)
       (i32.const 5304))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 5304)
       (i32.const 5352))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p1)
       (i32.const 5256)
       (i32.const 5400))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $l2)
       (i32.const 5256)
       (i32.const 5448))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $l3)
       (i32.const 5304)
       (i32.const 5496))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 5496)
       (i32.const 5544))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26303,34 +26303,34 @@
     (call $f1m_square
       (i32.const 5688)
       (i32.const 5736))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p0)
       (i32.const 5688)
       (i32.const 5784))
     (call $f1m_square
       (i32.const 5784)
       (i32.const 5784))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 5784)
       (i32.const 5640)
       (i32.const 5784))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 5784)
       (i32.const 5736)
       (i32.const 5784))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5784)
       (i32.const 5784)
       (i32.const 5784))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5640)
       (i32.const 5640)
       (i32.const 5832))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5832)
       (i32.const 5640)
       (i32.const 5832))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -26343,33 +26343,33 @@
     (call $f1m_square
       (i32.const 5832)
       (local.get $p1))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p1)
       (i32.const 5784)
       (local.get $p1))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p1)
       (i32.const 5784)
       (local.get $p1))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5736)
       (i32.const 5736)
       (i32.const 5880))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5880)
       (i32.const 5880)
       (i32.const 5880))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5880)
       (i32.const 5880)
       (i32.const 5880))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 5784)
       (local.get $p1)
       (i32.add
         (local.get $p1)
         (i32.const 48)))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26377,7 +26377,7 @@
       (i32.add
         (local.get $p1)
         (i32.const 48)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26416,37 +26416,37 @@
     (call $f1m_square
       (i32.const 5976)
       (i32.const 6024))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p0)
       (i32.const 5976)
       (i32.const 6072))
     (call $f1m_square
       (i32.const 6072)
       (i32.const 6072))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6072)
       (i32.const 5928)
       (i32.const 6072))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6072)
       (i32.const 6024)
       (i32.const 6072))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6072)
       (i32.const 6072)
       (i32.const 6072))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 5928)
       (i32.const 5928)
       (i32.const 6120))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6120)
       (i32.const 5928)
       (i32.const 6120))
     (call $f1m_square
       (i32.const 6120)
       (i32.const 6168))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -26454,33 +26454,33 @@
         (local.get $p0)
         (i32.const 96))
       (i32.const 6216))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6072)
       (i32.const 6072)
       (local.get $p1))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6168)
       (local.get $p1)
       (local.get $p1))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6024)
       (i32.const 6024)
       (i32.const 6264))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6264)
       (i32.const 6264)
       (i32.const 6264))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6264)
       (i32.const 6264)
       (i32.const 6264))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6072)
       (local.get $p1)
       (i32.add
         (local.get $p1)
         (i32.const 48)))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26488,7 +26488,7 @@
       (i32.add
         (local.get $p1)
         (i32.const 48)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26496,7 +26496,7 @@
       (i32.add
         (local.get $p1)
         (i32.const 48)))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6216)
       (i32.const 6216)
       (i32.add
@@ -26550,11 +26550,11 @@
               (local.get $p1)
               (local.get $p2))
             (return)))))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p1)
       (local.get $p0)
       (i32.const 6312))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26565,58 +26565,58 @@
     (call $f1m_square
       (i32.const 6312)
       (i32.const 6360))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6360)
       (i32.const 6360)
       (i32.const 6456))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6456)
       (i32.const 6456)
       (i32.const 6456))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 6312)
       (i32.const 6456)
       (i32.const 6504))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6408)
       (i32.const 6408)
       (i32.const 6552))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 6456)
       (i32.const 6648))
     (call $f1m_square
       (i32.const 6552)
       (i32.const 6600))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6648)
       (i32.const 6648)
       (i32.const 6696))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6600)
       (i32.const 6504)
       (local.get $p2))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p2)
       (i32.const 6696)
       (local.get $p2))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 6504)
       (i32.const 6744))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6744)
       (i32.const 6744)
       (i32.const 6744))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6648)
       (local.get $p2)
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p2)
         (i32.const 48))
@@ -26624,7 +26624,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 48))
@@ -26632,7 +26632,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 6312)
       (i32.const 6312)
       (i32.add
@@ -26676,15 +26676,15 @@
     (call $f1m_square
       (local.get $l3)
       (i32.const 6792))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p1)
       (i32.const 6792)
       (i32.const 6840))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $l3)
       (i32.const 6792)
       (i32.const 6888))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26706,11 +26706,11 @@
               (local.get $p1)
               (local.get $p2))
             (return)))))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6840)
       (local.get $p0)
       (i32.const 6984))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 6936)
       (i32.add
         (local.get $p0)
@@ -26719,58 +26719,58 @@
     (call $f1m_square
       (i32.const 6984)
       (i32.const 7032))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7032)
       (i32.const 7032)
       (i32.const 7128))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7128)
       (i32.const 7128)
       (i32.const 7128))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 6984)
       (i32.const 7128)
       (i32.const 7176))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7080)
       (i32.const 7080)
       (i32.const 7224))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 7128)
       (i32.const 7320))
     (call $f1m_square
       (i32.const 7224)
       (i32.const 7272))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7320)
       (i32.const 7320)
       (i32.const 7368))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 7272)
       (i32.const 7176)
       (local.get $p2))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p2)
       (i32.const 7368)
       (local.get $p2))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 7176)
       (i32.const 7416))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7416)
       (i32.const 7416)
       (i32.const 7416))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 7320)
       (local.get $p2)
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p2)
         (i32.const 48))
@@ -26778,7 +26778,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 48))
@@ -26786,7 +26786,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $l3)
       (i32.const 6984)
       (i32.add
@@ -26799,7 +26799,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 96)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 96))
@@ -26807,7 +26807,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 96)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 96))
@@ -26865,29 +26865,29 @@
     (call $f1m_square
       (local.get $l4)
       (i32.const 7512))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 7512)
       (i32.const 7560))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p1)
       (i32.const 7464)
       (i32.const 7608))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $l3)
       (i32.const 7464)
       (i32.const 7656))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $l4)
       (i32.const 7512)
       (i32.const 7704))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 7704)
       (i32.const 7752))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -26907,63 +26907,63 @@
               (local.get $p0)
               (local.get $p2))
             (return)))))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 7608)
       (i32.const 7560)
       (i32.const 7848))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 7800)
       (i32.const 7752)
       (i32.const 7896))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7848)
       (i32.const 7848)
       (i32.const 7944))
     (call $f1m_square
       (i32.const 7944)
       (i32.const 7944))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 7848)
       (i32.const 7944)
       (i32.const 7992))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 7896)
       (i32.const 7896)
       (i32.const 8040))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 7560)
       (i32.const 7944)
       (i32.const 8136))
     (call $f1m_square
       (i32.const 8040)
       (i32.const 8088))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 8136)
       (i32.const 8136)
       (i32.const 8184))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 8088)
       (i32.const 7992)
       (local.get $p2))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p2)
       (i32.const 8184)
       (local.get $p2))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 7752)
       (i32.const 7992)
       (i32.const 8232))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 8232)
       (i32.const 8232)
       (i32.const 8232))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 8136)
       (local.get $p2)
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p2)
         (i32.const 48))
@@ -26971,7 +26971,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 48))
@@ -26979,7 +26979,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $l3)
       (local.get $l4)
       (i32.add
@@ -26992,7 +26992,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 96)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 96))
@@ -27000,7 +27000,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 96)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p2)
         (i32.const 96))
@@ -27008,7 +27008,7 @@
       (i32.add
         (local.get $p2)
         (i32.const 96)))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p2)
         (i32.const 96))
@@ -27147,15 +27147,15 @@
         (call $f1m_square
           (i32.const 8712)
           (i32.const 8760))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.const 8712)
           (i32.const 8760)
           (i32.const 8808))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (local.get $p0)
           (i32.const 8760)
           (local.get $p1))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.add
             (local.get $p0)
             (i32.const 48))
@@ -27172,11 +27172,11 @@
     (call $f1m_square
       (local.get $p0)
       (i32.const 8904))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 8904)
       (i32.const 8904))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 8904)
       (i32.const 5016)
       (i32.const 8904))
@@ -27207,15 +27207,15 @@
         (call $f1m_square
           (i32.const 9048)
           (i32.const 9096))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.const 9048)
           (i32.const 9096)
           (i32.const 9144))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (local.get $p0)
           (i32.const 9096)
           (local.get $p1))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.add
             (local.get $p0)
             (i32.const 48))
@@ -27272,7 +27272,7 @@
                 (local.get $l6)
                 (i32.const 48))))
           (else
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $l5)
               (i32.add
                 (local.get $l4)
@@ -27281,11 +27281,11 @@
             (call $f1m_square
               (local.get $l5)
               (local.get $l5))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $l5)
               (local.get $l4)
               (local.get $l6))
-            (call $f1m_mul
+            (call $main/bignum_f1m_mul
               (local.get $l5)
               (i32.const 9192)
               (i32.add
@@ -27327,15 +27327,15 @@
         (call $f1m_square
           (i32.const 9240)
           (i32.const 9288))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.const 9240)
           (i32.const 9288)
           (i32.const 9336))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (local.get $p0)
           (i32.const 9288)
           (local.get $p1))
-        (call $f1m_mul
+        (call $main/bignum_f1m_mul
           (i32.add
             (local.get $p0)
             (i32.const 48))
@@ -27490,11 +27490,11 @@
     (call $f1m_square
       (local.get $p1)
       (i32.const 9672))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p1)
       (i32.const 9672)
       (i32.const 9672))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 9672)
       (i32.const 5016)
       (i32.const 9672))
@@ -29935,11 +29935,11 @@
         (local.get $p1)
         (i32.const 48))))
   (func $f2m_mul  (param $p0 i32) (param $p1 i32) (param $p2 i32)
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (local.get $p1)
       (i32.const 15496))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -29947,36 +29947,36 @@
         (local.get $p1)
         (i32.const 48))
       (i32.const 15544))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p0)
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 15592))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p1)
       (i32.add
         (local.get $p1)
         (i32.const 48))
       (i32.const 15640))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 15592)
       (i32.const 15640)
       (i32.const 15592))
     (call $f1m_neg
       (i32.const 15544)
       (local.get $p2))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 15496)
       (local.get $p2)
       (local.get $p2))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 15496)
       (i32.const 15544)
       (i32.add
         (local.get $p2)
         (i32.const 48)))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 15592)
       (i32.add
         (local.get $p2)
@@ -29985,11 +29985,11 @@
         (local.get $p2)
         (i32.const 48))))
   (func $f2m_mul1  (param $p0 i32) (param $p1 i32) (param $p2 i32)
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (local.get $p1)
       (local.get $p2))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -29998,13 +29998,13 @@
         (local.get $p2)
         (i32.const 48))))
   (func $f2m_square  (param $p0 i32) (param $p1 i32)
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 15688))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p0)
       (i32.add
         (local.get $p0)
@@ -30015,37 +30015,37 @@
         (local.get $p0)
         (i32.const 48))
       (i32.const 15784))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p0)
       (i32.const 15784)
       (i32.const 15784))
     (call $f1m_neg
       (i32.const 15688)
       (i32.const 15832))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 15832)
       (i32.const 15688)
       (i32.const 15832))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.const 15736)
       (i32.const 15784)
       (local.get $p1))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p1)
       (i32.const 15832)
       (local.get $p1))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 15688)
       (i32.const 15688)
       (i32.add
         (local.get $p1)
         (i32.const 48))))
   (func $f2m_add  (param $p0 i32) (param $p1 i32) (param $p2 i32)
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (local.get $p0)
       (local.get $p1)
       (local.get $p2))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -30056,11 +30056,11 @@
         (local.get $p2)
         (i32.const 48))))
   (func $f2m_sub  (param $p0 i32) (param $p1 i32) (param $p2 i32)
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p0)
       (local.get $p1)
       (local.get $p2))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -30138,18 +30138,18 @@
     (call $f1m_neg
       (i32.const 15928)
       (i32.const 15976))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 15880)
       (i32.const 15976)
       (i32.const 15976))
     (call $f1m_inverse
       (i32.const 15976)
       (i32.const 16024))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 16024)
       (local.get $p1))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p0)
         (i32.const 48))
@@ -35356,13 +35356,13 @@
     (call $intq_copy
       (local.get $p0)
       (i32.const 44504))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (local.get $p0)
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (local.get $p1))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 44504)
       (i32.add
         (local.get $p0)
@@ -37190,13 +37190,13 @@
       (i32.const 60072)
       (local.get $p4)))
   (func $f300  (param $p0 i32) (param $p1 i32) (param $p2 i32)
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p1)
       (i32.add
         (local.get $p0)
         (i32.const 48))
       (i32.const 60744))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 48))
@@ -37204,13 +37204,13 @@
         (local.get $p0)
         (i32.const 48))
       (i32.const 60792))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 96))
       (local.get $p0)
       (i32.const 60840))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (i32.add
         (local.get $p1)
         (i32.const 144))
@@ -38088,7 +38088,7 @@
       (then
         (return
           (i32.const 0))))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 87432)
       (i32.const 87544))
@@ -38097,7 +38097,7 @@
         (local.get $p0)
         (i32.const 48))
       (i32.const 87592))
-    (call $f1m_mul
+    (call $main/bignum_f1m_mul
       (local.get $p0)
       (i32.const 87480)
       (i32.const 87688))
@@ -38171,44 +38171,44 @@
       (i32.const 88272)
       (i32.const 88024)
       (i32.const 88656))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 88368)
       (i32.const 88416)
       (i32.const 88128))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 88368)
       (i32.const 88416)
       (i32.const 88416))
     (call $intq_copy
       (i32.const 88128)
       (i32.const 88368))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 88464)
       (i32.const 88512)
       (i32.const 88128))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 88464)
       (i32.const 88512)
       (i32.const 88512))
     (call $intq_copy
       (i32.const 88128)
       (i32.const 88464))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 88560)
       (i32.const 88608)
       (i32.const 88128))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 88560)
       (i32.const 88608)
       (i32.const 88608))
     (call $intq_copy
       (i32.const 88128)
       (i32.const 88560))
-    (call $f1m_sub
+    (call $main/bignum_f1m_sub
       (i32.const 88704)
       (i32.const 88656)
       (i32.const 88128))
-    (call $f1m_add
+    (call $main/bignum_f1m_add
       (i32.const 88656)
       (i32.const 88704)
       (i32.const 88704))
